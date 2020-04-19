@@ -1,7 +1,9 @@
 <template>
   <div>
-    <img @click="rotateImg" :src="'./images/' + squirrel.images[currentImg].src" :alt="imgDesc">
+    <img v-bind:class="{ flipped: isFlipped }" @click="rotateImg" :src="'./images/' + squirrel.images[currentImg].src" :alt="imgDesc">
     <div>{{ squirrel.name }}</div>
+
+    <button @click="isFlipped=!isFlipped">Flip</button>
   </div>
 </template>
 
@@ -13,7 +15,8 @@ export default {
   },
   data: function () {
     return {
-      currentImg: 0
+      currentImg: 0,
+      isFlipped: false
     }
   },
   computed: {
@@ -32,5 +35,9 @@ export default {
 <style scoped>
   img {
     width: 100%;
+  }
+
+  .flipped {
+    transform: scaleX(-1);
   }
 </style>
