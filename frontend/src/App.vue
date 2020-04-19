@@ -1,9 +1,16 @@
 <template>
-  <div id="app"></div>
+  <div id="app">
+    <SquirrelGrid/>
+  </div>
 </template>
 
 <script>
+import SquirrelGrid from './components/SquirrelGrid'
+
 export default {
-  name: 'App'
+  name: 'App',
+  components: {
+    SquirrelGrid
+  }
 }
 </script>

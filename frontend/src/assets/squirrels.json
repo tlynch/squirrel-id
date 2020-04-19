@@ -1,0 +1,45 @@
+{
+  "squirrels": [
+    {
+      "id": 1,
+      "name": "Mafalda",
+      "color": "black",
+      "notes": "",
+      "images": [
+        {
+          "src": "DSC03457.JPG",
+          "tags": ["right-facing", "on roof"],
+          "location": {"lat": 43, "lng": -97}
+        },
+        {
+          "src": "DSC03458.JPG",
+          "tags": ["right-facing", "on roof"],
+          "location": {"lat": 43, "lng": -97}
+        },
+        {
+          "src": "DSC03459.JPG",
+          "tags": ["right-facing", "on roof"],
+          "location": {"lat": 43, "lng": -97}
+        },
+        {
+          "src": "DSC03460.JPG",
+          "tags": ["front-facing", "on roof"],
+          "location": {"lat": 43, "lng": -97}
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Manolito",
+      "color": "grey",
+      "notes": "",
+      "images": [
+        {
+          "src": "DSC03931.JPG",
+          "tags": ["right-facing", "on branch"],
+          "location": {"lat": 43, "lng": -97}
+        }
+      ]
+    }
+  ]
+}
