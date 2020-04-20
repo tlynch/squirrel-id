@@ -1,9 +1,15 @@
 <template>
   <div>
-    <img v-bind:class="{ flipped: isFlipped }" @click="rotateImg" :src="'./images/' + squirrel.images[currentImg].src" :alt="imgDesc">
-    <div>{{ squirrel.name }}</div>
+    <img :class="{ flipped: squirrel.images[currentImg].flipped }" @click="rotateImg" :src="'./images/' + squirrel.images[currentImg].src" :alt="imgDesc">
+    <div>
+        {{ imgDesc }}
+        <span v-if="squirrel.images[currentImg].flipped">
+            (flipped)
+        </span>
+    </div>
+   <div>{{ squirrel.name }}</div>
 
-    <button @click="isFlipped=!isFlipped">Flip</button>
+    <button @click="flipImg">Flip</button>
   </div>
 </template>
 
@@ -15,8 +21,7 @@ export default {
   },
   data: function () {
     return {
-      currentImg: 0,
-      isFlipped: false
+      currentImg: 0
     }
   },
   computed: {
@@ -27,7 +32,14 @@ export default {
   methods: {
     rotateImg: function () {
       this.currentImg = (this.currentImg + 1) % this.squirrel.images.length;
+    },
+    flipImg: function () {
+      this.squirrel.images[this.currentImg].flipped = !this.squirrel.images[this.currentImg].flipped;
     }
+  },
+
+  created() {
+    this.squirrel.images.map(item => this.$set(item, 'flipped', false))
   }
 }
 </script>
@@ -37,7 +49,7 @@ export default {
     width: 100%;
   }
 
-  .flipped {
+  img.flipped {
     transform: scaleX(-1);
   }
 </style>
